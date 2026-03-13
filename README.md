@@ -1,19 +1,19 @@
-# Apple Music Skill
+# macOS Music Skill
 
-This repo stores a skill for Apple Music.app integration on macOS using AppleScript.
+This repo stores a skill for macOS Music.app integration via AppleScript.
 
 ## Installation
 
 Install with `skills.sh`:
 
 ```bash
-skills.sh add vinitu/apple-music-skill
+skills.sh add vinitu/macos-music-skill
 ```
 
 If you use the npm installer instead:
 
 ```bash
-npx skills add vinitu/apple-music-skill
+npx skills add vinitu/macos-music-skill
 ```
 
 ## Scope

@@ -1,9 +1,9 @@
 ---
-name: apple-music
+name: macos-music
 description: Control Apple Music.app on macOS. Use for playback, library search, playlist management, volume, shuffle/repeat, and AirPlay output. Triggers on queries about playing music, songs, albums, artists, playlists, or controlling audio playback.
 ---
 
-# Apple Music Integration
+# macOS Music Integration
 
 Control Music.app on macOS using AppleScript via `osascript`.
 
