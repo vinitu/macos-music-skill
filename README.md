@@ -4,16 +4,14 @@ This repo stores a skill for macOS Music.app integration via AppleScript.
 
 ## Installation
 
-Install with `skills.sh`:
+```bash
+npx skills add vinitu/macos-music-skill
+```
+
+Or with [skills.sh](https://skills.sh):
 
 ```bash
 skills.sh add vinitu/macos-music-skill
-```
-
-If you use the npm installer instead:
-
-```bash
-npx skills add vinitu/macos-music-skill
 ```
 
 ## Scope
@@ -33,24 +31,22 @@ npx skills add vinitu/macos-music-skill
 
 ## How To Use
 
+From the skill directory (or path where scripts are installed):
+
 ```bash
-# Play / pause
-osascript -e 'tell application "Music" to playpause'
-
-# Get current track
-osascript -e 'tell application "Music" to get name of current track'
-
-# Search library
-osascript -e 'tell application "Music" to get name of every track of playlist "Library" whose artist contains "Beatles"'
-
-# Set volume
-osascript -e 'tell application "Music" to set sound volume to 50'
-
-# List playlists
-osascript -e 'tell application "Music" to get name of every user playlist'
+# Start playback
+osascript scripts/playback/play.applescript
+# Current track name, artist, album, duration, position
+osascript scripts/track/current.applescript
+# Search library by artist (name|artist|album)
+osascript scripts/track/search.applescript "Beatles" artist
+# Set volume 0–100
+osascript scripts/volume/set.applescript 50
+# List all user playlists
+osascript scripts/playlist/list.applescript
 ```
 
-For the full command set and examples, see `SKILL.md`.
+For the full command set and examples, see `SKILL.md` and scripts under `scripts/`.
 
 ## Troubleshooting
 
