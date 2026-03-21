@@ -22,7 +22,8 @@ This repo stores a skill for macOS Music.app integration.
 - `scripts/library/add-files.applescript`.
 - `tests/dictionary_contract.sh`: contract test against Music.app scripting dictionary.
 - `tests/smoke_music.sh`: smoke test for script layer (skips when Music.app not available).
-- `.github/workflows/ci-pr.yml`, `ci-main.yml`: CI on PR and push to main.
+- `.github/workflows/ci-pr.yml`: PR validation, auto-merge, version bump, tag, and release flow.
+- `.github/workflows/ci-main.yml`: main-branch validation, patch tag, and release flow.
 
 ## Validation
 
