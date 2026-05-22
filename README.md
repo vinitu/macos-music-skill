@@ -32,15 +32,39 @@ scripts/commands/<entity>/<action>.sh [args...]
 
 ## Backend Map
 
+- `scripts/commands/application/*` → AppleScript in `scripts/applescripts/application/*`
 - `scripts/commands/library/*` → AppleScript in `scripts/applescripts/library/*`
+- `scripts/commands/playback/*` → AppleScript in `scripts/applescripts/playback/*`
 - `scripts/commands/playlist/*` → AppleScript in `scripts/applescripts/playlist/*`
+- `scripts/commands/repeat/*` → AppleScript in `scripts/applescripts/repeat/*`
+- `scripts/commands/shuffle/*` → AppleScript in `scripts/applescripts/shuffle/*`
 - `scripts/commands/track/*` → AppleScript in `scripts/applescripts/track/*`
+- `scripts/commands/volume/*` → AppleScript in `scripts/applescripts/volume/*`
 
 ## Command Surface
+
+Application:
+
+- `scripts/commands/application/eq-enabled.sh`
+- `scripts/commands/application/mute.sh`
+- `scripts/commands/application/player-position.sh`
 
 Library:
 
 - `scripts/commands/library/add-files.sh`
+
+Playback:
+
+- `scripts/commands/playback/back-track.sh`
+- `scripts/commands/playback/fast-forward.sh`
+- `scripts/commands/playback/next.sh`
+- `scripts/commands/playback/pause.sh`
+- `scripts/commands/playback/play-track.sh`
+- `scripts/commands/playback/play.sh`
+- `scripts/commands/playback/previous.sh`
+- `scripts/commands/playback/resume.sh`
+- `scripts/commands/playback/state.sh`
+- `scripts/commands/playback/stop.sh`
 
 Playlist:
 
@@ -49,11 +73,26 @@ Playlist:
 - `scripts/commands/playlist/list.sh`
 - `scripts/commands/playlist/tracks.sh`
 
+Repeat:
+
+- `scripts/commands/repeat/get.sh`
+- `scripts/commands/repeat/set.sh`
+
+Shuffle:
+
+- `scripts/commands/shuffle/get.sh`
+- `scripts/commands/shuffle/set.sh`
+
 Track:
 
 - `scripts/commands/track/current.sh`
 - `scripts/commands/track/reveal.sh`
 - `scripts/commands/track/search.sh`
+
+Volume:
+
+- `scripts/commands/volume/get.sh`
+- `scripts/commands/volume/set.sh`
 
 ## Validation
 
