@@ -1,6 +1,9 @@
 # macOS Music Skill
 
-This repo stores a skill for macOS Music.app integration via AppleScript.
+This repo stores an AI agent skill for Apple Music.app on macOS.
+
+The public interface is `scripts/commands`.
+`scripts/applescripts` stores internal AppleScript backends and dictionary-aligned coverage.
 
 ## Installation
 
@@ -14,45 +17,47 @@ Or with [skills.sh](https://skills.sh):
 skills.sh add vinitu/macos-music-skill
 ```
 
-## Scope
-
-- Playback controls: play, pause, stop, next, previous, seek.
-- Get current track info: name, artist, album, duration, position.
-- Search the library by name, artist, album, or genre.
-- Manage playlists: list, create, add tracks, play.
-- Volume control.
-- Shuffle and repeat mode.
-- AirPlay output selection.
-
 ## Prerequisites
 
-- macOS 10.15+ (Catalina or later) with Music.app
-- Automation permission granted to your terminal (System Settings > Privacy & Security > Automation)
+- macOS with Music.app
+- Automation permission granted to your terminal app
 
-## How To Use
+## Public Interface
 
-From the skill directory (or path where scripts are installed):
+Run skill actions with:
 
 ```bash
-# Start playback
-osascript scripts/playback/play.applescript
-# Current track name, artist, album, duration, position
-osascript scripts/track/current.applescript
-# Search library by artist (name|artist|album)
-osascript scripts/track/search.applescript "Beatles" artist
-# Set volume 0–100
-osascript scripts/volume/set.applescript 50
-# List all user playlists
-osascript scripts/playlist/list.applescript
+scripts/commands/<entity>/<action>.sh [args...]
 ```
 
-For the full command set and examples, see `SKILL.md` and scripts under `scripts/`.
+## Backend Map
 
-## Troubleshooting
+- `scripts/commands/library/*` → AppleScript in `scripts/applescripts/library/*`
+- `scripts/commands/playlist/*` → AppleScript in `scripts/applescripts/playlist/*`
+- `scripts/commands/track/*` → AppleScript in `scripts/applescripts/track/*`
 
-| Issue | Solution |
-|-------|----------|
-| "Not authorized to send Apple events" | Grant Automation permission to terminal |
-| No tracks found | Ensure your library is synced / not empty |
-| AirPlay device not listed | Check device is on the same network |
-| Commands hang or timeout | Restart Music.app and retry |
+## Command Surface
+
+Library:
+
+- `scripts/commands/library/add-files.sh`
+
+Playlist:
+
+- `scripts/commands/playlist/add-track.sh`
+- `scripts/commands/playlist/create.sh`
+- `scripts/commands/playlist/list.sh`
+- `scripts/commands/playlist/tracks.sh`
+
+Track:
+
+- `scripts/commands/track/current.sh`
+- `scripts/commands/track/reveal.sh`
+- `scripts/commands/track/search.sh`
+
+## Validation
+
+```bash
+make compile
+make test
+```
