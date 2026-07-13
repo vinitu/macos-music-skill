@@ -99,6 +99,12 @@ scripts/commands/volume/get.sh
 scripts/commands/volume/set.sh
 ```
 
+## Output Rules
+
+- Commands return JSON by default unless noted otherwise.
+- `show.sh` opens the app and returns a small JSON envelope.
+- `--json`, `--plain`, and `--format=plain|json` are not supported.
+
 ## JSON Contract
 
 Track object:
