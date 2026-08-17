@@ -1,4 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../_lib/common.sh"
-run_backend track reveal "$@"
+
+usage() {
+  printf 'Usage: %s%s\n' "$(basename "$0")" ' <track-name>'
+}
+
+main() {
+  [[ $# -lt 1 ]] && json_fail "missing track name"
+  run_backend track reveal "$@"
+}
+
+main "$@"
